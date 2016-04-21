@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/aty_home_drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 短信界面的内容区域-->
+        <ListView
+            android:id="@+id/aty_home_content_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/content_home_emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="~暂无短信记录~"
+            android:textColor="@android:color/secondary_text_light_nodisable"
+            android:textSize="20sp" />
+
+        <!-- 底部的新添加按钮-->
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:onClick="clk_floatingBar"
+            android:src="@drawable/aty_home_edt"
+            app:backgroundTint="@android:color/holo_blue_light" />
+    </FrameLayout>
+
+    <!--左边的菜单-->
+    <LinearLayout
+        android:id="@+id/aty_home_NaviMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/drawer_header_aty_home" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableLeft="@drawable/aty_home_menu_timing_sms"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:onClick="clk_timingSms"
+            android:text="定时短信"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableLeft="@drawable/aty_home_sms_queen"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:onClick="clk_smsQueen"
+            android:text="待发短信"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:drawableLeft="@drawable/aty_home_menu_about"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:onClick="clk_about"
+            android:text="关于"
+            android:textSize="20sp" />
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

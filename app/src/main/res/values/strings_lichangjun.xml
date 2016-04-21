@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主页-->
+    <string name="menu_aty_home_multiSend">群发消息</string>
+    <string name="menu_aty_home_history">发送历史</string>
+    <string name="menu_aty_home_title">短信管理</string>
+    <string name="menu_aty_input_title">编辑短信</string>
+</resources>

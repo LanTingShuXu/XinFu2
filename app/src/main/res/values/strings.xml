@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">信符</string>
+    <string name="contactImage">Contact Image</string>
+    <string name="contactName">Contact Name</string>
+</resources>

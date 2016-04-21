@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+    <!--此itemView被home界面和待发短信界面复用-->
+    <TextView
+        android:id="@+id/item_home_list_count"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/item_home_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/item_home_list_count"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="李长军；李长军；李长军ssssssssssss"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/item_home_list_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/item_home_list_count"
+        android:layout_toRightOf="@id/item_home_list_count"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="这是最新的一条数据。测试\n测试\n测试\n测试" />
+
+    <TextView
+        android:id="@+id/item_home_list_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/item_home_list_name"
+        android:gravity="center"
+        android:text="15/01/01" />
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.swpu.gantao.xinfu.TimingSmsQueenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="@drawable/navigation_back"
+            app:title="待发短信"
+            app:titleTextColor="@android:color/white" />
+
+        <ListView
+            android:id="@+id/aty_timing_sms_queen_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/aty_timing_sms_queen_emptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/aty_home_menu_timing_sms"
+        android:text="暂无待发定时短信哟~"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="18sp" />
+</FrameLayout>

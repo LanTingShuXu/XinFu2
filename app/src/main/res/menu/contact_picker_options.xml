@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sup="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/contacts_done"
+        android:icon="@drawable/choose_ok"
+        android:title="确定"
+        sup:showAsAction="ifRoom" />
+</menu>

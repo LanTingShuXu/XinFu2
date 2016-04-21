@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.swpu.gantao.xinfu" >
+
+    <!-- 读取联系人的权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 读取短信记录的权限 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- 发送短信的权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 自定义权限 -->
+    <uses-permission android:name="com.swpu.gantao.xinfu.SEND_SMS" />
+    <!-- 手机启动事件权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 监听电池事件权限 -->
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <!-- 手机状态权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 用户解锁事件权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 发送短信的服务 -->
+        <service
+            android:name=".service.SmsService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.swpu.gantao.xinfu.SEND_SMS" >
+            <intent-filter>
+                <action android:name="com.swpu.gantao.xinfu.SMS_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".receiver.AutoRunBroadcastReceiver" >
+            <intent-filter>
+
+                <!-- 开机启动 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 电源连接 -->
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <!-- 电池充电完毕 -->
+                <action android:name="android.intent.action.BATTERY_OKAY" />
+                <!-- 亮屏 -->
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <!-- 用户解锁 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 重启 -->
+                <action android:name="android.intent.action.REBOOT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.FullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InputActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ev.contactsmultipicker.ContactPickerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TimingSmsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".TimingSmsQueenActivity" >
+        </activity>
+    </application>
+
+</manifest>
